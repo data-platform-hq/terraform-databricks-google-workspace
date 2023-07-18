@@ -1,23 +1,10 @@
-# variable "google_project" {
-#   description = "value"
-#   type        = string
-#   default     = ""
-# }
-
-# variable "google_region" {
-#   description = "value"
-#   type        = string
-#   default     = ""
-# }
-
-# variable "google_zone" {
-#   description = "value"
-#   type        = string
-#   default     = ""
-# }
-
 variable "project_id" {
   description = "ID of the project in which the resources should be created."
+  type        = string
+}
+
+variable "databricks_account_id" {
+  description = "Account Id that could be found in the bottom left corner of https://accounts.cloud.databricks.com/"
   type        = string
 }
 
@@ -39,23 +26,10 @@ variable "region" {
   default     = "us-west1"
 }
 
-variable "zone" {
-  description = "The default zone to manage resources in."
-  type        = string
-  default     = "us-west1-b"
-}
-
-
-variable "databricks_account_id" {
-  description = "Account Id that could be found in the bottom left corner of https://accounts.cloud.databricks.com/"
-  type        = string
-  # default     = ""
-}
-
 variable "databricks_google_service_account" {
   description = "value"
   type        = string
-  default     = ""
+  default     = null
 }
 
 variable "databricks_vpc" {
@@ -67,5 +41,17 @@ variable "databricks_vpc" {
 variable "databricks_subnet" {
   description = "value"
   type        = string
+  default     = null
+}
+
+variable "custom_workspace_name" {
+  type        = string
+  description = "Specifies the name of the Databricks Workspace resource"
+  default     = null
+}
+
+variable "custom_network_name" {
+  type        = string
+  description = "Specifies the name of the Databricks Network configurations"
   default     = null
 }

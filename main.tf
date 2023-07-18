@@ -1,10 +1,6 @@
 locals {
-  #   suffix = length(var.suffix) == 0 ? "" : "-${var.suffix}"
-  #   workspace_name = var.custom_workspace_name == null ? "${var.product_base_name}-${var.env}${local.suffix}-dbxws" : "${var.custom_workspace_name}"
-  #   network_name   = var.custom_network_name == null ? "${var.product_base_name}-${var.env}${local.suffix}-dbxnw" : "${var.custom_network_name}"
-  workspace_name = "${var.product_base_name}-${var.env}-dbws"
-  # network_name   = replace("Test123-dbnw", "-", "")
-  network_name = "${var.product_base_name}-${var.env}-dbnw"
+  workspace_name = var.custom_workspace_name == null ? "${var.product_base_name}-${var.env}-dbws" : "${var.custom_workspace_name}"
+  network_name   = var.custom_network_name == null ? "${var.product_base_name}-${var.env}-dbnw" : "${var.custom_network_name}"
 }
 
 data "google_compute_subnetwork" "this" {
