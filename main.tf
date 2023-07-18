@@ -1,15 +1,7 @@
 locals {
-  workspace_name = var.custom_workspace_name == null ? "${var.product_base_name}-${var.env}-dbws" : "${var.custom_workspace_name}"
-  network_name   = var.custom_network_name == null ? "${var.product_base_name}-${var.env}-dbnw" : "${var.custom_network_name}"
+  workspace_name = var.custom_workspace_name == null ? "${var.product_base_name}-${var.env}-dbws" : var.custom_workspace_name
+  network_name   = var.custom_network_name == null ? "${var.product_base_name}-${var.env}-dbnw" : var.custom_network_name
 }
-
-data "google_compute_subnetwork" "this" {
-  name   = var.databricks_subnet
-  region = var.region
-}
-
-data "google_client_openid_userinfo" "me" {}
-data "google_client_config" "current" {}
 
 resource "databricks_mws_networks" "this" {
   account_id   = var.databricks_account_id
