@@ -26,12 +26,6 @@ variable "region" {
   default     = "us-west1"
 }
 
-# variable "databricks_google_service_account" {
-#   description = "value"
-#   type        = string
-#   default     = null
-# }
-
 variable "databricks_vpc" {
   description = "value"
   type        = string
