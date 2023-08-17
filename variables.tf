@@ -17,25 +17,21 @@ variable "product_base_name" {
 variable "env" {
   description = "Variable to mark the environment of the resource (used to create services)."
   type        = string
-  default     = "dev"
 }
 
 variable "region" {
   description = "The location or cloud resources region for the environment."
   type        = string
-  default     = "us-west1"
 }
 
 variable "databricks_vpc" {
   description = "value"
   type        = string
-  default     = null
 }
 
 variable "databricks_subnet" {
   description = "value"
   type        = string
-  default     = null
 }
 
 variable "gke_connectivity_type" {
