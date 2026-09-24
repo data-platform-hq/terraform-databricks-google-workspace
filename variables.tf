@@ -34,22 +34,6 @@ variable "databricks_subnet" {
   type        = string
 }
 
-variable "gke_connectivity_type" {
-  description = "Specifies the network connectivity types for the GKE nodes and the GKE master network. Possible values are: PRIVATE_NODE_PUBLIC_MASTER, PUBLIC_NODE_PUBLIC_MASTER"
-  type        = string
-  default     = "PRIVATE_NODE_PUBLIC_MASTER"
-}
-
-variable "gke_master_ip_range" {
-  description = <<-EOT
-  The IP range from which to allocate GKE cluster master resources.
-  This field will be ignored if GKE private cluster is not enabled.
-  It must be exactly as big as /28"value
-  EOT
-  type        = string
-  default     = "10.3.0.0/28"
-}
-
 variable "custom_workspace_name" {
   type        = string
   description = "Specifies the name of the Databricks Workspace resource"
@@ -60,4 +44,20 @@ variable "custom_network_name" {
   type        = string
   description = "Specifies the name of the Databricks Network configurations"
   default     = null
+}
+
+variable "vpc_endpoint_ids" {
+  description = "Databricks VPC endpoint IDs"
+  type        = map(string)
+  default     = {}
+}
+
+variable "private_access_settings" {
+  description = "Databricks Private Access Settings configuration"
+  type = object({
+    name                  = string
+    public_access_enabled = bool
+    private_access_level  = string
+  })
+  default = null
 }
