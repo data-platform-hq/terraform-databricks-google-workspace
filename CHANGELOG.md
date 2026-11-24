@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/data-platform-hq/terraform-databricks-google-workspace/compare/v1.0.0...v1.1.0) (2026-11-24)
+
+
+### Features
+
+* databricks private access ([e9d0939](https://github.com/data-platform-hq/terraform-databricks-google-workspace/commit/e9d0939aac2274e7ce6d1d1d10c333b3d8ff662c))
+
 # 1.0.0 (2023-08-21)
 
 
